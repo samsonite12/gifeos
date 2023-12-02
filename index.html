@@ -11,7 +11,32 @@
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
+    <style>
+     ::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
+     }
+    </style>
   <script src="jquery.js"></script> 
+    <script>const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
+
+// "Show the dialog" button opens the dialog modally
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+// "Close" button closes the dialog
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});</script>
     <script> 
     $(function(){
       $("#topbar").load("bar.html"); 
@@ -29,5 +54,13 @@
     <hr>
     <h3>Other</h3>
     <p>Gerbert the Beloved <a href="gerbert.gif" download>Download</a><img src="gerbert.gif" width="10%" height="10%"></p>
+    <p>Hallucination PFP <dialog>
+  <h1>!DANGER!</h1>
+      <p>If you have epelipsy, DO NOT DOWNLOAD</p>
+</dialog>
+    <button autofocus>Close</button>
+    <a href="strobe.gif" download>Download</a><button>Download</button><img src="strobe.gif" width="10%" height="10%"></p>
+    
+
   </body>
 </html>
